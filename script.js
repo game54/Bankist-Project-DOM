@@ -56,6 +56,19 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
   }
 });
 
+// Smooth behavior for # empty links (Temporary)
+document.querySelectorAll('a:link').forEach(link =>
+  link.addEventListener('click', function (e) {
+    if (link.getAttribute('href') === '#') {
+      e.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    }
+  })
+);
+
 // Tabbed component
 
 tabsContainer.addEventListener('click', function (e) {
@@ -116,11 +129,12 @@ headerObserver.observe(header);
 // Reveal sections
 const allSections = document.querySelectorAll('.section');
 const revealSection = function (entries, observer) {
-  const [entry] = entries;
-  if (!entry.isIntersecting) return;
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
 
-  entry.target.classList.remove('section--hidden');
-  observer.unobserve(entry.target);
+    entry.target.classList.remove('section--hidden');
+    observer.unobserve(entry.target);
+  });
 };
 
 const sectionObserver = new IntersectionObserver(revealSection, {
@@ -137,18 +151,18 @@ allSections.forEach(function (section) {
 const imgTargets = document.querySelectorAll('img[data-src]');
 
 const loadImg = function (entries, observer) {
-  const [entry] = entries;
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
 
-  if (!entry.isIntersecting) return;
+    // Replace src with data-src
+    entry.target.src = entry.target.dataset.src;
 
-  // Replace src with data-src
-  entry.target.src = entry.target.dataset.src;
+    entry.target.addEventListener('load', function () {
+      this.classList.remove('lazy-img');
+    });
 
-  entry.target.addEventListener('load', function () {
-    this.classList.remove('lazy-img');
+    observer.unobserve(entry.target);
   });
-
-  observer.unobserve(entry.target);
 };
 
 const imgObserver = new IntersectionObserver(loadImg, {
@@ -224,16 +238,15 @@ const slider = function () {
   //curSlide = 1: -100%, 0%, 100%, 200%, 300%
 
   document.addEventListener('keydown', function (e) {
-    console.log(e.key);
     e.key === 'ArrowRight' && nextSlide();
     e.key === 'ArrowLeft' && prevSlide();
   });
 
   dotContainer.addEventListener('click', function (e) {
     if (e.target.classList.contains('dots__dot')) {
-      const slide = e.target.dataset.slide;
-      goToSlide(slide);
-      activateDot(slide);
+      curSlide = +e.target.dataset.slide;
+      goToSlide(curSlide);
+      activateDot(curSlide);
     }
   });
 };
