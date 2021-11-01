@@ -133,6 +133,7 @@
 
   .nav__logo {
     position: absolute;
+    margin-top: 3rem;
     top: 4rem;
     left: 50%;
     transform: translate(-50%, 0);
@@ -149,11 +150,11 @@
     background-color: rgba(66, 66, 66, 0.8);
   }
 
-  .nav.sticky {
+  /* .nav.sticky {
     position: fixed;
     padding: 0 9rem;
     background-color: rgba(255, 255, 255, 0.95);
-  }
+  } */
 }
 
 /* 620px , 39 */
