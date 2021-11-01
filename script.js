@@ -251,3 +251,10 @@ const slider = function () {
   });
 };
 slider();
+
+const btnNavEl = document.querySelector('.btn-mobile-nav');
+const headerEl = document.querySelector('.nav2');
+
+btnNavEl.addEventListener('click', function () {
+  headerEl.classList.toggle('nav-open');
+});

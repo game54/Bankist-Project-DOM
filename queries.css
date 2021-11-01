@@ -1,0 +1,161 @@
+/*  1250px */
+
+@media (max-width: 78em) {
+  .header {
+    padding: 0 6rem;
+  }
+  .nav {
+    padding: 2rem 0;
+  }
+}
+
+/*  1150px */
+@media (max-width: 72em) {
+  .header__title {
+    grid-template-columns: 2fr;
+    align-items: center;
+    justify-items: center;
+    margin-top: 7rem;
+  }
+
+  .header__img {
+    grid-column: unset;
+    grid-row: unset;
+    transform: translate(0);
+  }
+
+  .header__title_box {
+    grid-column: 1/-1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  .btn--text {
+    align-self: flex-start;
+  }
+
+  .header__img {
+    width: 50%;
+  }
+
+  .section {
+    padding: 10rem 3rem;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    margin: 0;
+  }
+
+  .features__feature {
+    width: 80%;
+  }
+
+  .features__img {
+    width: 80%;
+  }
+
+  .features__img_plant {
+    grid-row: 3/4;
+  }
+
+  .btn-mobile-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .ionicon {
+    margin-right: 3rem;
+  }
+}
+
+/* 878 px */
+
+@media (max-width: 55em) {
+  /* .nav {
+    display: none;
+  } */
+  .nav__links {
+    display: none;
+  }
+  .footer__nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: center;
+  }
+
+  .slider {
+    margin: 0;
+    height: 55rem;
+  }
+
+  .operations__content {
+    padding: 1rem;
+  }
+
+  #section--2 {
+    padding: 7rem 3rem;
+  }
+
+  .operations__tab {
+    padding: 1.25rem 0.5rem;
+  }
+
+  .slide .testimonial::before {
+    font-size: 12rem;
+    top: -3.7rem;
+  }
+  .btn-mobile-nav {
+    display: block;
+  }
+  .nav-open {
+    background-color: rgba(14, 13, 13, 0.8);
+    backdrop-filter: blur(10px);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 11111;
+    color: #eee;
+  }
+
+  .nav-open .nav__ul {
+    list-style: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10rem;
+    padding-top: 20rem;
+  }
+}
+
+/* 620px , 39 */
+
+@media (max-width: 39em) {
+  html {
+    font-size: 50%;
+  }
+
+  .slider {
+    height: 70rem;
+  }
+
+  .slide {
+    height: 70rem;
+  }
+
+  .dots {
+    bottom: 0;
+  }
+
+  .header__img {
+    width: 100%;
+  }
+  .header__title_box h1 {
+    font-size: 3.5rem;
+  }
+}
