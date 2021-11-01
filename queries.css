@@ -148,6 +148,7 @@
 
   .nav-open .sticky {
     background-color: rgba(66, 66, 66, 0.8);
+    position: absolute;
   }
 
   /* .nav.sticky {
@@ -166,6 +167,7 @@
 
   .slider {
     height: 70rem;
+    width: 95%;
   }
 
   .slide {
