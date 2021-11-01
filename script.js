@@ -54,6 +54,7 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
       behavior: 'smooth',
     });
   }
+  headerEl.classList.toggle('nav-open');
 });
 
 // Smooth behavior for # empty links (Temporary)
@@ -253,7 +254,7 @@ const slider = function () {
 slider();
 
 const btnNavEl = document.querySelector('.btn-mobile-nav');
-const headerEl = document.querySelector('.nav2');
+const headerEl = document.querySelector('.header');
 
 btnNavEl.addEventListener('click', function () {
   headerEl.classList.toggle('nav-open');

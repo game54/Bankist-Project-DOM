@@ -66,6 +66,7 @@ body {
 .btn {
   display: inline-block;
   background-color: var(--color-primary);
+  color: #333;
   font-size: 1.6rem;
   font-family: inherit;
   font-weight: 500;
@@ -679,12 +680,8 @@ h4 {
 
 .nav-open .icon-mobile-nav[name='close-outline'] {
   display: block;
-  color: #fff;
+  /* color: #fff; */
 }
 .nav-open .icon-mobile-nav[name='menu-outline'] {
-  display: none;
-}
-
-.nav2 .nav__ul {
   display: none;
 }
