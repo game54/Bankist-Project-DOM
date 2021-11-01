@@ -50,6 +50,11 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
     e.preventDefault();
     const id = e.target.getAttribute('href');
     // console.log(id);
+    console.log(id);
+    if (id === '#') {
+      e.preventDefault();
+      headerEl.classList.toggle('nav-open');
+    }
     document.querySelector(id).scrollIntoView({
       behavior: 'smooth',
     });
